@@ -9,6 +9,10 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * Класс Task представляет собой модель задачи.
+ * Здесь содержатся поля и методы для работы с задачами.
+ */
 @Data
 @Entity
 public class Task {
