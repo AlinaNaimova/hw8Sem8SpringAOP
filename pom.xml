@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ru.geegbrain</groupId>
-	<artifactId>hw5sem5SpringData</artifactId>
+	<artifactId>hw8Sem8SpringAOP</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>hw5sem5</name>
 	<description>Demo project for Spring Boot </description>

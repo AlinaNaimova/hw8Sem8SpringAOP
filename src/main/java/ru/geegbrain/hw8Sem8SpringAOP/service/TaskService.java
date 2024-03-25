@@ -1,9 +1,10 @@
-package ru.geegbrain.hw5sem5.service;
+package ru.geegbrain.hw8Sem8SpringAOP.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.geegbrain.hw5sem5.model.Task;
-import ru.geegbrain.hw5sem5.repository.TaskRepository;
+import ru.geegbrain.hw8Sem8SpringAOP.aspects.TrackUserAction;
+import ru.geegbrain.hw8Sem8SpringAOP.model.Task;
+import ru.geegbrain.hw8Sem8SpringAOP.repository.TaskRepository;
 
 import java.util.Date;
 import java.util.List;
@@ -21,11 +22,13 @@ public class TaskService {
     private TaskRepository taskRepository;
 
     // Получение всех задач
+    @TrackUserAction
     public List<Task> getAllTasks() {
         return taskRepository.findAll();
     }
 
     // Создание новой задачи
+    @TrackUserAction
     public Task createTask(Task task) {
         task.setCreationDate(new Date());
         task.setStatus("Pending");
@@ -33,11 +36,13 @@ public class TaskService {
     }
 
     // Получение задачи по ID
+    @TrackUserAction
     public Optional<Task> getTaskById(Long id) {
         return taskRepository.findById(id);
     }
 
     // Обновление задачи по ID
+    @TrackUserAction
     public Task updateTask(Long id, Task task) {
         Optional<Task> existingTaskOptional = taskRepository.findById(id);
         if (existingTaskOptional.isPresent()) {
@@ -51,6 +56,7 @@ public class TaskService {
     }
 
     // Удаление задачи по ID
+    @TrackUserAction
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
     }

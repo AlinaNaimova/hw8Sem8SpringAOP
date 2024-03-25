@@ -1,11 +1,11 @@
-package ru.geegbrain.hw5sem5.controller;
+package ru.geegbrain.hw8Sem8SpringAOP.controller;
 
 
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.geegbrain.hw5sem5.model.Task;
-import ru.geegbrain.hw5sem5.service.TaskService;
+import ru.geegbrain.hw8Sem8SpringAOP.model.Task;
+import ru.geegbrain.hw8Sem8SpringAOP.service.TaskService;
 
 import java.util.List;
 

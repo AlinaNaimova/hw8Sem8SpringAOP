@@ -1,4 +1,4 @@
-package ru.geegbrain.hw5sem5;
+package ru.geegbrain.hw8Sem8SpringAOP;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

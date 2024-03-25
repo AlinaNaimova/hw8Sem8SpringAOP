@@ -1,13 +1,13 @@
-package ru.geegbrain.hw5sem5;
+package ru.geegbrain.hw8Sem8SpringAOP;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Hw5sem5Application {
+public class hw8Sem8SpringAOPApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Hw5sem5Application.class, args);
+		SpringApplication.run(hw8Sem8SpringAOPApplication.class, args);
 	}
 
 }

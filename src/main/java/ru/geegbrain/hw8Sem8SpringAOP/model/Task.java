@@ -1,4 +1,4 @@
-package ru.geegbrain.hw5sem5.model;
+package ru.geegbrain.hw8Sem8SpringAOP.model;
 
 
 import jakarta.persistence.Entity;
