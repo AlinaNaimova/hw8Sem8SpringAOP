@@ -19,7 +19,12 @@ import java.util.Optional;
 public class TaskService {
 
     @Autowired
-    private TaskRepository taskRepository;
+    private final TaskRepository taskRepository;
+
+    public TaskService(TaskRepository taskRepository) {
+        this.taskRepository = taskRepository;
+    }
+
 
     // Получение всех задач
     @TrackUserAction
@@ -51,7 +56,7 @@ public class TaskService {
             existingTask.setStatus(task.getStatus());
             return taskRepository.save(existingTask);
         } else {
-            return null;
+            throw new IllegalArgumentException("Task with id " + id + " not found");
         }
     }
 
