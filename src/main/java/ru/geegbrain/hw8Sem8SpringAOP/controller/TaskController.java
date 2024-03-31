@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.geegbrain.hw8Sem8SpringAOP.model.Task;
+import ru.geegbrain.hw8Sem8SpringAOP.service.FileGateWay;
 import ru.geegbrain.hw8Sem8SpringAOP.service.TaskService;
 
 import java.util.List;
@@ -20,6 +21,14 @@ public class TaskController {
 
     @Autowired
     private TaskService taskService;
+    private FileGateWay fileGateWay;
+
+    @Autowired
+    public TaskController(FileGateWay fileGateWay) {
+        this.fileGateWay = fileGateWay;
+    }
+
+
 
     // Получение списка всех задач
     @GetMapping
@@ -30,7 +39,8 @@ public class TaskController {
     // Создание новой задачи
     @PostMapping
     public Task createTask(@RequestBody Task task) {
-        return taskService.createTask(task);
+        fileGateWay.writeToFile(task.getTitle() + ".txt", task.getDescription());
+    return taskService.createTask(task);
     }
 
     // Получение задачи по ID
